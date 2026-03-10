@@ -1,0 +1,250 @@
+﻿arduino-lib-builder
+wifi ipc: failed to post wifi task
+wifi stop stage3: out of memory!
+wifi stop stage2: out of memory!
+wifi stop: out of memory!
+wifi deinit internal: wifi not stop
+addba response cb: bssid change from %02x:%02x:%02x:%02x:%02x:%02x to %02x:%02x:%02x:%02x:%02x:%02x
+wifi stop stage error, stage=%d
+invalid magic number %x, call WIFI_INIT_CONFIG_DEFAULT to init config
+wifi nvs cfg alloc out of memory
+invalid wifi nvs key index %d
+timeout when WiFi un-init, type=%d
+Error! Should enable WiFi modem sleep when both WiFi and Bluetooth are enabled!!!!!!
+create wifi task: failed to create task
+create wifi task: failed to create sem
+create wifi task: failed to create queue
+create wifi task: failed to create queue
+wifi assert: %d
+[%s] Reset chip failed, respone val = %d - 0x%X
+[%s] ERROR! ID NOT MATCH QMI8658 , Respone id is 0x%x
+WiFi Connected failed
+Failed to find QMI8658 - check your wiring!
+/g:\Arduino1\libraries\TFT_eSPI\Processors/TFT_eSPI_ESP32_S3.c
+void TFT_eSPI::dmaWait()
+/spiffs
+arduino_events
+esp32s3-
+BARDUINO_USB_CDC_EVENTS
+Feather ESP32-S3 TFT
+https://espressif.github.io/arduino-esp32/webusb.html
+arduino_usb_events
+ARDUINO_USB_EVENTS
+GPIO number error
+GPIO output gpio_num error
+GPIO interrupt type error
+GPIO pull mode error
+E (%u) %s: GPIO_PIN mask error 
+/IDF/components/driver/gpio.c
+GPIO drive capability error
+gpio_set_drive_capability
+gpio_config
+gpio_od_disable
+gpio_od_enable
+gpio_output_disable
+gpio_output_enable
+gpio_input_disable
+gpio_input_enable
+gpio_set_direction
+gpio_set_pull_mode
+gpio_set_level
+gpio_intr_disable
+gpio_intr_enable_on_core
+gpio_intr_enable
+gpio_set_intr_type
+gpio_pulldown_dis
+gpio_pulldown_en
+gpio_pullup_dis
+gpio_pullup_en
+/IDF/components/driver/i2c.c
+E (%u) %s: i2c command link allocation error: the buffer provided is too small.
+E (%u) %s: i2c command link malloc error
+E (%u) %s: %s(%d): i2c number error
+E (%u) %s: %s(%d): i2c driver install error
+E (%u) %s: %s(%d): i2c timing value error
+E (%u) %s: %s(%d): i2c null address error
+E (%u) %s: %s(%d): i2c buffer size too small for slave mode
+E (%u) %s: i2c driver malloc error
+E (%u) %s: i2c ringbuffer error
+E (%u) %s: i2c semaphore error
+E (%u) %s: i2c driver install error
+E (%u) %s: %s(%d): sda gpio number error
+E (%u) %s: %s(%d): scl gpio number error
+E (%u) %s: %s(%d): this i2c pin does not support internal pull-up
+E (%u) %s: %s(%d): scl and sda gpio numbers are the same
+E (%u) %s: %s(%d): i2c mode error
+E (%u) %s: %s(%d): i2c clock choice is invalid, please check flag and frequency
+E (%u) %s: %s(%d): i2c command link error
+E (%u) %s: %s(%d): i2c ack type error
+E (%u) %s: %s(%d): i2c data read length error
+E (%u) %s: %s(%d): i2c driver not installed
+i2c_master_cmd_begin
+i2c_master_read
+i2c_master_read_byte
+i2c_master_write_byte
+i2c_master_write
+i2c_master_stop
+i2c_cmd_link_append
+i2c_master_start
+i2c_set_pin
+i2c_isr_register
+i2c_set_timeout
+i2c_param_config
+i2c_reset_rx_fifo
+i2c_reset_tx_fifo
+i2c_driver_delete
+i2c_master_cmd_begin_static
+i2c_driver_install
+periph_module_reset
+E (%u) %s: %s(%d): RMT GPIO ERROR
+E (%u) %s: %s(%d): set gpio for RMT driver failed
+rmt_set_gpio
+rtc_gpio_deinit
+spi_master
+E (%u) %s: %s(%d): SPI_TRANS_USE_RXDATA only available for rxdata transfer <= 32 bits
+E (%u) %s: %s(%d): SPI_TRANS_USE_TXDATA only available for txdata transfer <= 32 bits
+E (%u) %s: %s(%d): txdata transfer > host maximum
+E (%u) %s: %s(%d): rxdata transfer > host maximum
+E (%u) %s: %s(%d): SPI3 does not support octal mode
+E (%u) %s: %s(%d): SPI half duplex mode is not supported when both MOSI and MISO phases are enabled.
+E (%u) %s: %s(%d): trans tx_buffer should be NULL and SPI_TRANS_USE_TXDATA should be cleared to skip MOSI phase.
+E (%u) %s: %s(%d): trans rx_buffer should be NULL and SPI_TRANS_USE_RXDATA should be cleared to skip MISO phase.
+spi_device_get_trans_result
+esp_ota_ops
+E (%u) %s: not found otadata
+E (%u) %s: mmap otadata filed. Err=0x%8x
+phys_offs != SPI_FLASH_CACHE2PHYS_FAIL
+/IDF/components/app_update/esp_ota_ops.c
+ota_app_count < 16 && "must erase the partition before writing to it"
+esp_ota_get_running_partition
+esp_ota_get_app_partition_count
+boot_comm
+bootloader_mmap
+E (%u) %s: tried to bootloader_mmap twice
+E (%u) %s: spi_flash_mmap failed: 0x%x
+/IDF/components/bootloader_support/src/bootloader_flash.c
+bootloader_flash_read_sfdp
+bootloader_flash_execute_command_common
+E (%u) %s: bootloader_flash_read failed at 0x%08x
+E (%u) %s: bootloader_mmap(0x%x, 0x%x) failed
+/IDF/components/bootloader_support/src/idf/bootloader_sha.c
+bootloader_sha256_finish
+bootloader_sha256_data
+/IDF/components/spi_flash/partition.c
+/IDF/components/spi_flash/flash_mmap.c
+spi_flash_munmap
+spi_flash_mmap_pages
+E (%u) %s: unexpected spi flash error code: 0x%x
+/IDF/components/spi_flash/esp_flash_api.c
+spi_flash
+spi_flash
+/IDF/components/spi_flash/spi_flash_os_func_app.c
+spi1_flash_os_check_yield
+/IDF/components/spi_flash/cache_utils.c
+esp_ipc_call(other_cpuid, &spi_flash_op_block_func, (void *) other_cpuid)
+spi_flash_enable_interrupts_caches_and_other_cpu
+spi_flash_disable_interrupts_caches_and_other_cpu
+spi_flash_init_lock
+findItem(nsIndex, datatype, key, findPage, item)
+E (%u) %s: Task watchdog got triggered. The following tasks did not reset the watchdog in time:
+/IDF/components/esp_system/port/soc/esp32s3/clk.c
+/IDF/components/esp_system/port/soc/esp32s3/reset_reason.c
+esp_reset_reason_set_hint
+Rebooting...
+IDF/components/hal/esp32s3/include/hal/i2c_ll.h
+WIFI_AP_DEF
+WIFI_STA_DEF
+E (%u) %s: dhcps cb: failed to post IP_EVENT_AP_STAIPASSIGNED (%x)
+E (%u) %s: dhcp client stop called with NULL api
+E (%u) %s: esp netif api sync sem init fail
+E (%u) %s: esp netif api lock sem init fail
+E (%u) %s: %s: Failed to configure netif with config=%p (config or if_key is NULL or duplicate key)
+esp_netif_start_api
+E (%u) %s: invalid wifi event id %d
+Pairwise key expansion
+wifi_init
+WIFI_EVENT
+wifi_init_default
+E (%u) %s: esp_wifi_get_mac failed with %d
+E (%u) %s: esp_wifi_register_if_rxcb for if=%p failed with %d
+E (%u) %s: Failed to create wifi interface handle
+/IDF/components/esp_wifi/src/wifi_default.c
+esp_netif_create_default_wifi_sta
+esp_netif_create_default_wifi_ap
+wifi_netif
+E (%u) %s: No memory to create a wifi interface handle
+E (%u) %s: Unknown wifi interface id if=%d
+E (%u) %s: esp_wifi_internal_reg_rxcb for if=%d failed with %d
+IDF/components/lwip/lwip/src/api/sockets.c
+IDF/components/lwip/lwip/src/api/tcpip.c
+tcpip_api_call
+tcp_enqueue_flags: need either TCP_SYN or TCP_FIN in flags (programmer violates API)
+IDF/components/lwip/port/esp32/freertos/sys_arch.c
+IDF/components/lwip/port/esp32/netif/wlanif.c
+wlanif_init
+IDF/components/lwip/port/esp32/vfs_lwip.c
+IDF/components/lwip/lwip/src/api/api_lib.c
+IDF/components/lwip/lwip/src/api/api_msg.c
+IDF/components/lwip/lwip/src/api/netbuf.c
+SPIRAM
+result == core_id || result == SPINLOCK_FREE
+/IDF/components/esp_hw_support/include/soc/spinlock.h
+(result == SPINLOCK_FREE) == (lock->count == 0)
+spinlock_release
+spinlock_acquire
+system_api
+/IDF/components/esp_hw_support/port/esp32s3/rtc_init.c
+spiram
+E (%u) %s: SPI RAM not initialized
+E (%u) %s: SPI SRAM error@%08x:%08x/%08x 
+E (%u) %s: SPI SRAM memory test fail. %d/%d writes failed, first @ %X
+ESP_ERR_NVS_KEY_TOO_LONG
+ESP_ERR_NVS_KEYS_NOT_INITIALIZED
+ESP_ERR_NVS_CORRUPT_KEY_PART
+ESP_ERR_OTA_BASE
+ESP_ERR_OTA_PARTITION_CONFLICT
+ESP_ERR_OTA_SELECT_INFO_INVALID
+ESP_ERR_OTA_VALIDATE_FAILED
+ESP_ERR_OTA_SMALL_SEC_VER
+ESP_ERR_OTA_ROLLBACK_FAILED
+ESP_ERR_OTA_ROLLBACK_INVALID_STATE
+ESP_ERR_NOT_ENOUGH_UNUSED_KEY_BLOCKS
+ESP_ERR_WIFI_BASE
+ESP_ERR_WIFI_NOT_INIT
+ESP_ERR_WIFI_NOT_STARTED
+ESP_ERR_WIFI_NOT_STOPPED
+ESP_ERR_WIFI_IF
+ESP_ERR_WIFI_MODE
+ESP_ERR_WIFI_STATE
+ESP_ERR_WIFI_CONN
+ESP_ERR_WIFI_NVS
+ESP_ERR_WIFI_MAC
+ESP_ERR_WIFI_SSID
+ESP_ERR_WIFI_PASSWORD
+ESP_ERR_WIFI_TIMEOUT
+ESP_ERR_WIFI_WAKE_FAIL
+ESP_ERR_WIFI_WOULD_BLOCK
+ESP_ERR_WIFI_NOT_CONNECT
+ESP_ERR_WIFI_POST
+ESP_ERR_WIFI_INIT_STATE
+ESP_ERR_WIFI_STOP_STATE
+ESP_ERR_WIFI_NOT_ASSOC
+ESP_ERR_WIFI_TX_DISALLOW
+ESP_ERR_WIFI_REGISTRAR
+ESP_ERR_WIFI_WPS_TYPE
+ESP_ERR_WIFI_WPS_SM
+ESP_ERR_MESH_WIFI_NOT_START
+ESP_ERR_HTTP_BASE
+ESP_ERR_HTTP_MAX_REDIRECT
+ESP_ERR_HTTP_CONNECT
+ESP_ERR_HTTP_WRITE_DATA
+ESP_ERR_HTTP_FETCH_HEADER
+ESP_ERR_HTTP_INVALID_TRANSPORT
+ESP_ERR_HTTP_CONNECTING
+ESP_ERR_HTTP_EAGAIN
+ESP_ERR_HTTP_CONNECTION_CLOSED
+ESP_ERR_MBEDTLS_PK_PARSE_KEY_FAILED
+ESP_ERR_WOLFSSL_KEY_VERIFY_SETUP_FAILED
+ESP_ERR_HTTPS_OTA_BASE
+ESP_ERR_HTTPS_OTA_IN_PROGRESS
+ESP_ERR_HTTPD_BASE

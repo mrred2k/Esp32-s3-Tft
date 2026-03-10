@@ -1,0 +1,116 @@
+TENSTAR ROBOT TS-ESP32-S3 Development Board User Manual
+
+Model: TS-ESP32-S3 Development Board
+1. Introduction
+
+The TENSTAR ROBOT TS-ESP32-S3 Development Board is a versatile microcontroller board designed for various embedded projects, IoT applications, and learning programming. It is based on the powerful ESP32S3FH4R2 chip and integrates a 1.14-inch TFT display, a BMP280 barometric pressure and temperature sensor, and a QMI8658C 6-axis IMU (accelerometer and gyroscope). This board supports development using popular platforms like Arduino and CircuitPython, offering flexibility for both beginners and experienced developers.
+Front and back view of the TS-ESP32-S3 Development Board
+Figure 1: Front and back view of the TS-ESP32-S3 Development Board, highlighting its compact design and integrated components.
+2. Features
+
+    Microcontroller: ESP32S3FH4R2 chip
+    Display: Integrated 1.14-inch TFT display
+    Sensors: BMP280 (Barometric Pressure & Temperature), QMI8658C (6-axis IMU: Accelerometer & Gyroscope)
+    Connectivity: USB Type-C for power and data
+    Power Options: USB Type-C (5V) or 3.7V Lithium Battery via PH2.0-2P connector
+    Battery Charging: Built-in lithium battery charging circuit via USB
+    Development Support: Compatible with Arduino IDE and CircuitPython
+    GPIO: Multiple General Purpose Input/Output pins, supporting various protocols (I2C, SPI, UART, I2S, PWM)
+    Buttons: BOOT and RST (Reset) buttons
+
+3. Pinout and Components Overview
+
+Understanding the pinout and component layout is crucial for effective use of the development board. Refer to the diagram below for a detailed overview.
+Detailed diagram of the ESP32-S3 development board showing dimensions, pinout, and descriptions of power and logic pins.
+Figure 2: Detailed pinout, dimensions, and power/logic pin descriptions for the TS-ESP32-S3 Development Board.
+3.1. Power Interface
+
+    USB Type-C: Used for powering the development board and for data communication. When a lithium battery is connected, the USB port also charges the battery.
+    PH2.0 Port: Connects any 250mAh or larger 3.7V/4.2V lithium battery to power the board. If both USB and battery are connected, USB powers the board and charges the battery.
+    CHG LED: A green LED indicating battery charging status. It lights up when charging and turns off when charging is complete. If no battery is connected, it will blink rapidly.
+    GND: Common ground for all power supplies and logic.
+    BAT: Voltage output from the PH2.0 lithium battery port.
+    USB: Positive voltage from the USB Type-C interface when connected.
+    EN: Enable pin for the 3.3V regulator. Pulled up by default; connecting to ground disables the 3.3V regulator.
+    3.3V: Stable 3.3V voltage output, capable of providing up to 500mA peak current.
+
+3.2. Logic Pins (GPIO)
+
+The logic pins on the ESP32-S3 are highly versatile. They can be used to connect various peripherals such as sensors, servos, and LEDs. There are no 'special' bootstrap pins, meaning almost any pin can be configured for input or output without specific restrictions. The ESP32-S3 chip supports multiplexing, allowing various functions like PWM, I2S, UART, I2C, or SPI to be assigned to any available pin.
+3.3. Buttons
+
+    RST (Reset): Resets the ESP32-S3 microcontroller.
+    BOOT: Used to enter bootloader mode for flashing new firmware. Typically held down during power-up or reset to enter this mode.
+
+4. Getting Started: Setup and Programming
+4.1. Initial Setup
+
+    Connect Power: Connect the development board to your computer using a USB Type-C cable. The board will power on.
+    Battery Connection (Optional): If using a lithium battery, connect it to the PH2.0-2P port. The CHG LED will indicate charging status.
+    Driver Installation: Your operating system should automatically detect the board. If not, you may need to install the appropriate USB-to-Serial drivers (e.g., CP210x or CH340 drivers, depending on the specific USB-to-Serial chip used on the board).
+
+4.2. Development Environment Setup (Arduino IDE)
+
+    Install Arduino IDE: Download and install the latest version of the Arduino IDE from the official Arduino website.
+    Add ESP32 Board Manager URL: Go to File > Preferences. In the 'Additional Board Manager URLs' field, add: https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+    Install ESP32 Boards: Go to Tools > Board > Boards Manager.... Search for 'ESP32' and install the 'esp32 by Espressif Systems' package.
+    Select Board: Go to Tools > Board > ESP32 Arduino and select the appropriate ESP32-S3 board (e.g., 'ESP32S3 Dev Module').
+    Select Port: Go to Tools > Port and select the serial port corresponding to your connected board.
+
+4.3. Development Environment Setup (CircuitPython)
+
+    Install esptool.py: If not already installed, install esptool.py using pip: pip install esptool
+    Download CircuitPython Firmware: Visit the official CircuitPython website (circuitpython.org) and download the latest CircuitPython firmware for the ESP32-S3.
+    Flash Firmware: Put the board into bootloader mode by holding down the BOOT button, then pressing and releasing the RST button, and finally releasing the BOOT button. Use esptool.py to erase the flash and then write the CircuitPython firmware.
+    Access CircuitPython: The board should appear as a USB drive named 'CIRCUITPY'. You can now write Python code directly to this drive.
+
+5. Operating the Board
+5.1. Basic Programming
+
+Once your development environment is set up, you can upload code to the ESP32-S3. Start with simple examples like blinking an LED or printing to the serial monitor to verify your setup.
+5.2. Using the TFT Display
+
+The 1.14-inch TFT display can be controlled using specific libraries in Arduino or CircuitPython. For Arduino, libraries like Adafruit_GFX and Adafruit_ST7789 are commonly used. For CircuitPython, the displayio module provides functionality to draw graphics and text.
+5.3. Accessing Sensors (BMP280 & QMI8658C)
+
+Both the BMP280 and QMI8658C sensors communicate via I2C. You will need to use appropriate libraries for these sensors in your chosen development environment. These libraries typically provide functions to read temperature, pressure, altitude (from BMP280), and accelerometer/gyroscope data (from QMI8658C).
+5.4. GPIO Usage
+
+The GPIO pins can be configured as digital inputs or outputs, analog inputs (ADC), or for specific peripheral functions (I2C, SPI, UART, etc.). Always refer to the pinout diagram (Figure 2) and the ESP32-S3 datasheet for detailed pin capabilities and recommended usage.
+6. Maintenance and Care
+
+    Handle with Care: Electronic components are sensitive. Avoid dropping the board or exposing it to excessive force.
+    ESD Protection: Always handle the board in an Electrostatic Discharge (ESD) safe environment to prevent damage to sensitive components.
+    Power Supply: Ensure you use a stable 5V power supply via USB or a compatible 3.7V LiPo battery. Incorrect voltage can damage the board.
+    Storage: Store the board in a dry, cool environment, away from direct sunlight and extreme temperatures.
+    Cleaning: If necessary, clean the board gently with a soft, dry brush or compressed air. Avoid using liquids.
+
+7. Troubleshooting
+
+    Board Not Detected: Ensure the USB Type-C cable is fully inserted and functional. Check if USB-to-Serial drivers are correctly installed on your computer.
+    Code Upload Failure: Verify that the correct board and serial port are selected in your IDE. If using Arduino, try holding the BOOT button, pressing RST, then releasing BOOT before uploading.
+    Display Not Working: Check your code for correct display initialization and library usage. Ensure all necessary libraries are installed.
+    Sensor Data Incorrect/Missing: Double-check I2C connections and addresses in your code. Ensure the correct sensor libraries are installed and initialized.
+    CHG LED Blinking Rapidly: This indicates that no battery is connected to the PH2.0 port, or the connected battery is not detected.
+    Board Not Powering On: Check your power source. If using a battery, ensure it is charged and correctly connected.
+
+8. Specifications
+Feature	Specification
+Microcontroller	ESP32S3FH4R2
+Display	1.14-inch TFT
+Sensors	BMP280 (Barometric Pressure & Temperature), QMI8658C (6-axis IMU)
+Power Input	USB Type-C (5V), PH2.0-2P (3.7V LiPo Battery)
+Output Voltage	3.3V (up to 500mA peak current)
+Package Type	SMD
+Dimensions	50.8mm x 22.9mm
+Weight	9g
+9. User Tips
+
+    Start Simple: Begin with basic examples to familiarize yourself with the board's functionality before diving into complex projects.
+    Consult Documentation: Always refer to the ESP32-S3 datasheet and specific sensor/display library documentation for advanced usage and troubleshooting.
+    Power Management: When using a battery, monitor its charge level. The integrated charging circuit makes it convenient to keep your projects powered.
+    Community Support: Leverage online communities and forums for Arduino, CircuitPython, and ESP32-S3 for project ideas, code examples, and troubleshooting assistance.
+
+10. Warranty and Support
+
+TENSTAR ROBOT products are designed for reliability and performance. For technical support, troubleshooting assistance, or warranty inquiries, please contact the seller or manufacturer directly through their official support channels. Keep your purchase records for any warranty claims.

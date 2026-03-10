@@ -1,0 +1,33 @@
+﻿Firmware backup analysis
+Timestamp: 20260309_105549
+BackupDir: .\firmware_backup
+Files analyzed: 2
+
+File: firmware_full_20260309_104812.bin
+  Raw size: 4096 KB
+  Strings extracted: 3911
+  Keyword matches: 250
+  URL hits: 1
+  MAC hits: 0
+  Pin hints: 2
+  Output:
+    - .\firmware_backup\analysis\firmware_full_20260309_104812.strings.txt
+    - .\firmware_backup\analysis\firmware_full_20260309_104812.matches.txt
+    - .\firmware_backup\analysis\firmware_full_20260309_104812.urls.txt
+    - .\firmware_backup\analysis\firmware_full_20260309_104812.macs.txt
+    - .\firmware_backup\analysis\firmware_full_20260309_104812.pins.txt
+
+File: firmware_app_20260309_104812.bin
+  Raw size: 2048 KB
+  Strings extracted: 3472
+  Keyword matches: 250
+  URL hits: 1
+  MAC hits: 0
+  Pin hints: 2
+  Output:
+    - .\firmware_backup\analysis\firmware_app_20260309_104812.strings.txt
+    - .\firmware_backup\analysis\firmware_app_20260309_104812.matches.txt
+    - .\firmware_backup\analysis\firmware_app_20260309_104812.urls.txt
+    - .\firmware_backup\analysis\firmware_app_20260309_104812.macs.txt
+    - .\firmware_backup\analysis\firmware_app_20260309_104812.pins.txt
+

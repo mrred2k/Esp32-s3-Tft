@@ -1,0 +1,250 @@
+﻿[0;32mI (%u) %s: Detect application request to enter UF2 bootloader
+[0;32mI (%u) %s: Detect double reset using RC on GPIO %d to enter UF2 bootloader
+[0;32mI (%u) %s: Detect GPIO %d active to enter UF2 bootloader
+`bootloader_flash
+[0;31mE (%u) %s: tried to bootloader_mmap twice
+[0;31mE (%u) %s: bootloader_mmap excess size %x
+[0;31mE (%u) %s: bootloader_flash_read src_addr 0x%x not 4-byte aligned
+[0;31mE (%u) %s: bootloader_flash_read size 0x%x not 4-byte aligned
+[0;31mE (%u) %s: bootloader_flash_read dest 0x%x not 4-byte aligned
+[0;31mE (%u) %s: bootloader_flash_write dest_addr 0x%x not %d-byte aligned
+[0;31mE (%u) %s: bootloader_flash_write size 0x%x not %d-byte aligned
+[0;31mE (%u) %s: bootloader_flash_write src 0x%x not 4 byte aligned
+ is not bootable
+[0;31mE (%u) %s: OTA app partition slot %d%s
+[0;31mE (%u) %s: Error in write_otadata operation. err = 0x%x
+[0;32mI (%u) %s: Set actual ota_seq=%d in otadata[0]
+NVS keys
+OTA data
+OTA app
+WiFi data
+[0;31mE (%u) %s: bootloader_mmap(0x%x, 0x%x) failed
+[0;31mE (%u) %s: ota_info partition size %d is too small (minimum %d bytes)
+[0;32mI (%u) %s: No factory image, trying OTA 0
+[0;31mE (%u) %s: ota data partition invalid, falling back to factory
+[0;31mE (%u) %s: ota data partition invalid and no factory, will try all partitions
+[0;31mE (%u) %s: No bootable test partition in the partition table
+[0;33mW (%u) %s: Falling back to test app as only bootable partition
+[0;31mE (%u) %s: No bootable app partitions in the partition table
+overlaps bootloader stack
+overlaps bootloader data
+[0;31mE (%u) %s: bootloader_flash_read failed at 0x%08x
+boot.esp32s3
+[0;31mE (%u) %s: failed when running XMC startup flow, reboot!
+[0;32mI (%u) %s: Boot SPI Speed : %s
+[0;32mI (%u) %s: SPI Mode       : %s
+[0;32mI (%u) %s: SPI Flash Size : %s
+[0;33mW (%u) %s: PRO CPU has been reset by WDT.
+[0;33mW (%u) %s: APP CPU has been reset by WDT.
+bootloader
+boot_comm
+[0;31mE (%u) %s: This chip is revision %d but the application is configured for minimum revision %d. Can't run.
+[0;31mE (%u) %s: failed to load bootloader image header!
+[0;32mI (%u) %s: ESP-IDF %s 2nd stage bootloader
+otadata
+Gsta.ssid
+=Psta.ssid
+bssid.set
+sta.apinfo
+sta.apinfo
+sta.apinfo
+sta.apinfo
+arduino-lib-builder
+wifi ipc: failed to post wifi task
+wifi stop stage3: out of memory!
+wifi stop stage2: out of memory!
+wifi stop: out of memory!
+wifi deinit internal: wifi not stop
+addba response cb: bssid change from %02x:%02x:%02x:%02x:%02x:%02x to %02x:%02x:%02x:%02x:%02x:%02x
+wifi stop stage error, stage=%d
+invalid magic number %x, call WIFI_INIT_CONFIG_DEFAULT to init config
+wifi nvs cfg alloc out of memory
+invalid wifi nvs key index %d
+timeout when WiFi un-init, type=%d
+Error! Should enable WiFi modem sleep when both WiFi and Bluetooth are enabled!!!!!!
+create wifi task: failed to create task
+create wifi task: failed to create sem
+create wifi task: failed to create queue
+create wifi task: failed to create queue
+wifi assert: %d
+[%s] Reset chip failed, respone val = %d - 0x%X
+[%s] ERROR! ID NOT MATCH QMI8658 , Respone id is 0x%x
+WiFi Connected failed
+Failed to find QMI8658 - check your wiring!
+/g:\Arduino1\libraries\TFT_eSPI\Processors/TFT_eSPI_ESP32_S3.c
+void TFT_eSPI::dmaWait()
+/spiffs
+arduino_events
+esp32s3-
+BARDUINO_USB_CDC_EVENTS
+Feather ESP32-S3 TFT
+https://espressif.github.io/arduino-esp32/webusb.html
+arduino_usb_events
+ARDUINO_USB_EVENTS
+GPIO number error
+GPIO output gpio_num error
+GPIO interrupt type error
+GPIO pull mode error
+E (%u) %s: GPIO_PIN mask error 
+/IDF/components/driver/gpio.c
+GPIO drive capability error
+gpio_set_drive_capability
+gpio_config
+gpio_od_disable
+gpio_od_enable
+gpio_output_disable
+gpio_output_enable
+gpio_input_disable
+gpio_input_enable
+gpio_set_direction
+gpio_set_pull_mode
+gpio_set_level
+gpio_intr_disable
+gpio_intr_enable_on_core
+gpio_intr_enable
+gpio_set_intr_type
+gpio_pulldown_dis
+gpio_pulldown_en
+gpio_pullup_dis
+gpio_pullup_en
+/IDF/components/driver/i2c.c
+E (%u) %s: i2c command link allocation error: the buffer provided is too small.
+E (%u) %s: i2c command link malloc error
+E (%u) %s: %s(%d): i2c number error
+E (%u) %s: %s(%d): i2c driver install error
+E (%u) %s: %s(%d): i2c timing value error
+E (%u) %s: %s(%d): i2c null address error
+E (%u) %s: %s(%d): i2c buffer size too small for slave mode
+E (%u) %s: i2c driver malloc error
+E (%u) %s: i2c ringbuffer error
+E (%u) %s: i2c semaphore error
+E (%u) %s: i2c driver install error
+E (%u) %s: %s(%d): sda gpio number error
+E (%u) %s: %s(%d): scl gpio number error
+E (%u) %s: %s(%d): this i2c pin does not support internal pull-up
+E (%u) %s: %s(%d): scl and sda gpio numbers are the same
+E (%u) %s: %s(%d): i2c mode error
+E (%u) %s: %s(%d): i2c clock choice is invalid, please check flag and frequency
+E (%u) %s: %s(%d): i2c command link error
+E (%u) %s: %s(%d): i2c ack type error
+E (%u) %s: %s(%d): i2c data read length error
+E (%u) %s: %s(%d): i2c driver not installed
+i2c_master_cmd_begin
+i2c_master_read
+i2c_master_read_byte
+i2c_master_write_byte
+i2c_master_write
+i2c_master_stop
+i2c_cmd_link_append
+i2c_master_start
+i2c_set_pin
+i2c_isr_register
+i2c_set_timeout
+i2c_param_config
+i2c_reset_rx_fifo
+i2c_reset_tx_fifo
+i2c_driver_delete
+i2c_master_cmd_begin_static
+i2c_driver_install
+periph_module_reset
+E (%u) %s: %s(%d): RMT GPIO ERROR
+E (%u) %s: %s(%d): set gpio for RMT driver failed
+rmt_set_gpio
+rtc_gpio_deinit
+spi_master
+E (%u) %s: %s(%d): SPI_TRANS_USE_RXDATA only available for rxdata transfer <= 32 bits
+E (%u) %s: %s(%d): SPI_TRANS_USE_TXDATA only available for txdata transfer <= 32 bits
+E (%u) %s: %s(%d): txdata transfer > host maximum
+E (%u) %s: %s(%d): rxdata transfer > host maximum
+E (%u) %s: %s(%d): SPI3 does not support octal mode
+E (%u) %s: %s(%d): SPI half duplex mode is not supported when both MOSI and MISO phases are enabled.
+E (%u) %s: %s(%d): trans tx_buffer should be NULL and SPI_TRANS_USE_TXDATA should be cleared to skip MOSI phase.
+E (%u) %s: %s(%d): trans rx_buffer should be NULL and SPI_TRANS_USE_RXDATA should be cleared to skip MISO phase.
+spi_device_get_trans_result
+esp_ota_ops
+E (%u) %s: not found otadata
+E (%u) %s: mmap otadata filed. Err=0x%8x
+phys_offs != SPI_FLASH_CACHE2PHYS_FAIL
+/IDF/components/app_update/esp_ota_ops.c
+ota_app_count < 16 && "must erase the partition before writing to it"
+esp_ota_get_running_partition
+esp_ota_get_app_partition_count
+boot_comm
+bootloader_mmap
+E (%u) %s: tried to bootloader_mmap twice
+E (%u) %s: spi_flash_mmap failed: 0x%x
+/IDF/components/bootloader_support/src/bootloader_flash.c
+bootloader_flash_read_sfdp
+bootloader_flash_execute_command_common
+E (%u) %s: bootloader_flash_read failed at 0x%08x
+E (%u) %s: bootloader_mmap(0x%x, 0x%x) failed
+/IDF/components/bootloader_support/src/idf/bootloader_sha.c
+bootloader_sha256_finish
+bootloader_sha256_data
+/IDF/components/spi_flash/partition.c
+/IDF/components/spi_flash/flash_mmap.c
+spi_flash_munmap
+spi_flash_mmap_pages
+E (%u) %s: unexpected spi flash error code: 0x%x
+/IDF/components/spi_flash/esp_flash_api.c
+spi_flash
+spi_flash
+/IDF/components/spi_flash/spi_flash_os_func_app.c
+spi1_flash_os_check_yield
+/IDF/components/spi_flash/cache_utils.c
+esp_ipc_call(other_cpuid, &spi_flash_op_block_func, (void *) other_cpuid)
+spi_flash_enable_interrupts_caches_and_other_cpu
+spi_flash_disable_interrupts_caches_and_other_cpu
+spi_flash_init_lock
+findItem(nsIndex, datatype, key, findPage, item)
+E (%u) %s: Task watchdog got triggered. The following tasks did not reset the watchdog in time:
+/IDF/components/esp_system/port/soc/esp32s3/clk.c
+/IDF/components/esp_system/port/soc/esp32s3/reset_reason.c
+esp_reset_reason_set_hint
+Rebooting...
+IDF/components/hal/esp32s3/include/hal/i2c_ll.h
+WIFI_AP_DEF
+WIFI_STA_DEF
+E (%u) %s: dhcps cb: failed to post IP_EVENT_AP_STAIPASSIGNED (%x)
+E (%u) %s: dhcp client stop called with NULL api
+E (%u) %s: esp netif api sync sem init fail
+E (%u) %s: esp netif api lock sem init fail
+E (%u) %s: %s: Failed to configure netif with config=%p (config or if_key is NULL or duplicate key)
+esp_netif_start_api
+E (%u) %s: invalid wifi event id %d
+Pairwise key expansion
+wifi_init
+WIFI_EVENT
+wifi_init_default
+E (%u) %s: esp_wifi_get_mac failed with %d
+E (%u) %s: esp_wifi_register_if_rxcb for if=%p failed with %d
+E (%u) %s: Failed to create wifi interface handle
+/IDF/components/esp_wifi/src/wifi_default.c
+esp_netif_create_default_wifi_sta
+esp_netif_create_default_wifi_ap
+wifi_netif
+E (%u) %s: No memory to create a wifi interface handle
+E (%u) %s: Unknown wifi interface id if=%d
+E (%u) %s: esp_wifi_internal_reg_rxcb for if=%d failed with %d
+IDF/components/lwip/lwip/src/api/sockets.c
+IDF/components/lwip/lwip/src/api/tcpip.c
+tcpip_api_call
+tcp_enqueue_flags: need either TCP_SYN or TCP_FIN in flags (programmer violates API)
+IDF/components/lwip/port/esp32/freertos/sys_arch.c
+IDF/components/lwip/port/esp32/netif/wlanif.c
+wlanif_init
+IDF/components/lwip/port/esp32/vfs_lwip.c
+IDF/components/lwip/lwip/src/api/api_lib.c
+IDF/components/lwip/lwip/src/api/api_msg.c
+IDF/components/lwip/lwip/src/api/netbuf.c
+SPIRAM
+result == core_id || result == SPINLOCK_FREE
+/IDF/components/esp_hw_support/include/soc/spinlock.h
+(result == SPINLOCK_FREE) == (lock->count == 0)
+spinlock_release
+spinlock_acquire
+system_api
+/IDF/components/esp_hw_support/port/esp32s3/rtc_init.c
+spiram
+E (%u) %s: SPI RAM not initialized
+E (%u) %s: SPI SRAM error@%08x:%08x/%08x 

@@ -1,0 +1,2 @@
+﻿/g:\Arduino1\libraries\TFT_eSPI\Processors/TFT_eSPI_ESP32_S3.c
+void TFT_eSPI::dmaWait()

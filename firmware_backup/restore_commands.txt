@@ -1,0 +1,18 @@
+ESP32-S3 Firmware Restore Commands
+
+Voraussetzung:
+- venv aktiv: .\.venv\Scripts\Activate.ps1
+- Board an COM4 (bei Bedarf COM-Port anpassen)
+
+1) Voll-Backup komplett zurückflashen (empfohlen für vollständige Wiederherstellung)
+   .\.venv\Scripts\python.exe -m esptool --chip esp32s3 --port COM4 --baud 921600 write-flash 0x0 .\firmware_backup\firmware_full_20260309_104812.bin
+
+2) Nur App-Partition zurückflashen
+   .\.venv\Scripts\python.exe -m esptool --chip esp32s3 --port COM4 --baud 921600 write-flash 0x10000 .\firmware_backup\firmware_app_20260309_104812.bin
+
+3) Voll-Backup verifizieren
+   .\.venv\Scripts\python.exe -m esptool --chip esp32s3 --port COM4 --baud 921600 verify-flash 0x0 .\firmware_backup\firmware_full_20260309_104812.bin
+
+Hinweis:
+- Wenn der Port belegt ist: Serial Monitor/andere Tools schließen.
+- Falls nötig in Bootloader-Modus setzen: BOOT halten, RST kurz drücken, BOOT loslassen.

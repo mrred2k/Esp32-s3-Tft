@@ -1,0 +1,69 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build (USB, with BLE)",
+			"type": "shell",
+			"command": "\"${userHome}\\.platformio\\penv\\Scripts\\pio.exe\" run -e tenstar_esp32s3_tft",
+			"group": "build",
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Build (OTA, no BLE)",
+			"type": "shell",
+			"command": "\"${userHome}\\.platformio\\penv\\Scripts\\pio.exe\" run -e tenstar_esp32s3_tft_ota_fast",
+			"group": "build",
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Upload via USB (with BLE)",
+			"type": "shell",
+			"command": "\"${userHome}\\.platformio\\penv\\Scripts\\pio.exe\" run -e tenstar_esp32s3_tft --target upload",
+			"group": "build",
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Upload via USB (no BLE)",
+			"type": "shell",
+			"command": "\"${userHome}\\.platformio\\penv\\Scripts\\pio.exe\" run -e tenstar_esp32s3_tft_usb_fast --target upload",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Upload via OTA (no BLE)",
+			"type": "shell",
+			"command": "\"${userHome}\\.platformio\\penv\\Scripts\\pio.exe\" run -e tenstar_esp32s3_tft_ota_fast --target upload",
+			"group": "build",
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Monitor (COM3)",
+			"type": "shell",
+			"command": "\"${userHome}\\.platformio\\penv\\Scripts\\pio.exe\" device monitor --environment tenstar_esp32s3_tft",
+			"problemMatcher": []
+		},
+		{
+			"label": "Upload via USB + Monitor (no BLE)",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Upload via USB (no BLE)",
+				"Monitor (COM3)"
+			],
+			"group": "build",
+			"problemMatcher": []
+		}
+	]
+}

@@ -1,0 +1,203 @@
+ Help with Tenstar ESP 32 S3 with 1.14" TFT
+
+Hey guys. Sorry but this is the third time I've typed this because I hadn't read the rules lol. Anyway, I have a few of these boards. I have the info from the Ali Express listing including pinout. The documentation isn't that great and I cannot even find a website for Tenstar. The boards are really nice and well made but a pain for me to config. I am wondering if anyone has had any success? I know they work because they ship with example code on them.
+
+I am a beginner but I have been at it very consistently almost every day. I have successfully set up TFT SPI in the past on two round OLEDs with the Uncanny Eye sketch. I know how to configure the User Setups and everything but I have never worked with a board that has a display built in. I was able to locate the User Setup 400 which was created for this board apparently and the Adafruit Feather, which is very similar. This didnt help. I tried manually pulling the TFT power pin high but no success. I have been at it for 3 days and I feel I have exhausted all of the options I could find.
+
+I have read mention of the IDE update or library update causing issues. Could this be the case?
+
+https://www.aliexpress.us/item/3256806404316992.html?gatewayAdapt=glo2usa4itemAdapt#nav-specification
+2
+·
+13
+Kommentarbereich
+YetAnotherRobert
+•
+vor 9 Monaten
+
+Now you've learned why this stuff is cheap. :-) It looks like it's probably a clone relative of feather esp32-s3 tft or maybe LilyGo's T-Display S3. There are really only so many ways to take a reference schematic, add a display and a USB connector, WS2812, battery connector, etc. There's probably not exactly a lot of unique engineering in it. Companies like Adafruit charge a few extra bucks and they have large libraries of code, employees and a whole community (that they've fostered for years and years) around them, and can reasonably support their products.
+
+Tenstar looks to be just a seller, not an actual maker. Honestly, it's pretty hard to tell with these companies. "Hire" an intern to knock out a schematic from a similar product, confirm that it doesn't burst into flames, have the place down the street deliver a thousand boards to your doc. Did they "manufacture" those boards? {shrug} Can they offer support on them?
+
+You didn't even bother to list what language you're programming in, let alone what code you're using, but it seems you have some experience. If you can program a board with a display that's attached via long wires, you can program a board with a display that's attached via short wires. That display is on an SPI bus, just like your external one was. The pinouts are listed in their specification tab. They have a whole section on that display.
+
+The kink is that they recommend a specific library that's broken and abandoned. Bodmer TFT has had no commits in eleven months while their issues and PR queues keep growing. I don't KNOW that exact combination is plagued by the bug that you're obliquely referring to. (Do you understand how big this industry is? Links with specifics help when you're asking 120,000 people for help....) but - as we advice probably three to five times a week in this group - those of us that aren't into Arduino Abandonware pain flee such libraries.
+
+https://github.com/bitbank2/bb_spi_lcd
+
+Maybe what you have isn't exactly a Waveshare or T_DISPLAY_S3, but since you know the display + the magic four/five wires, it's probably not hard to get going.
+
+Or try the Adafruit libraries. They work on non-Adafruit hardware, but they make you feel guilty about it. :-) There are plenty of examples of 7789 on S3.
+
+https://www.atomic14.com/2023/08/31/esp32-s3-adafruit-st7789-hardware-spi
+
+Another example of a possible starting place: https://github.com/Gemelon/LilyTest_S3 ...again, the SPI pinouts may be different.
+
+Or you can use Espressif's own interfaces - that happen to support ST7789.
+
+https://docs.espressif.com/projects/esp-idf/en/v5.4.1/esp32s3/api-reference/peripherals/lcd/index.html with associated examples
+
+Life is too short to waste on abandoned Arduino libraries. I've used the bbank, Adafruit, and Espressif drivers on similar board/driver combos and they've all worked fine.
+3
+Avatar von u/PsychologicalStep326
+PsychologicalStep326
+Poster*in •
+vor 9 Monaten
+
+I wanted to take a moment to sincerely thank you for your incredibly detailed and insightful response. It’s not often that someone takes the time to write something so thorough, and I genuinely appreciate you being so generous with your time and expertise. Your deep understanding of the electronics industry, from manufacturing realities to the nuances of the open-source community, is immediately obvious.
+
+Your post really struck a chord with me on a personal level. When I was a teen, I was at a fork in the road, dabbling in HTML, Java, and a bit of C. But at the time, computers were still relatively new, and honestly, I didn't see a clear path forward in that world. I ended up going into home renovation instead, which has been my career ever since. Reading your post, I couldn't help but think that had I stuck with programming, I might have the kind of knowledge you do today.
+
+That history is also my motivation now. Seeing the way the market is heading, I want to jump on this rising tide of technology and learn as much as I can. My goal is to merge my trade experience with new skills to get into high-end home automation, while also fueling a hobby I'm becoming passionate about. I'm so committed to this path that I've actually put my custom bathroom renovation business on hold to start an electrical apprenticeship, aiming to become a certified electrician. It feels like I'm building the foundational layer now for the smart systems I want to build later.
+
+Your commentary on the software libraries was particularly eye-opening. Your point about the potential pitfalls of "Arduino Abandonware" is incredibly insightful. While I've since learned that TFT_eSPI is still quite active, your perspective makes a powerful case for thinking critically about the long-term support and stability of any toolchain. It gives me a much clearer idea of where to invest my learning resources for the future, and I can absolutely see why you would advocate for libraries with robust, corporate-backed communities.
+
+On that note, you've given me a much greater appreciation for companies like Adafruit. I now understand that the added expense for their products isn't just for the hardware itself, but for the immense value of their literature, support, and the community they've fostered for years. You've opened my eyes to some interesting and important factors to consider as I move forward in this space.
+
+Again, thank you for the fantastic perspective. It’s exactly the kind of experienced insight that is so valuable for someone like me who is charting a new course. It is greatly appreciated.
+2
+YetAnotherRobert
+•
+vor 9 Monaten
+
+You're welcome. Thank you for the kind words. Sometimes I write these War and Peace epistles, and they'll languish without even a single non-default upvote. I'm never sure if they've even been read. Notes like this remind me why I do it. Well, and sometimes I'm just bored and have time on my hands. :-)
+
+Your intuition is correct. I have been at this since I was a teen myself, long ago. (We didn't program in hexadecimal; we programmed in Roman numerals...not on punched cards, but on clay tablets.) I had The Burn then and was lucky enough to turn it into a career-long profession. I have indeed worked at hardware and software companies, on up through the top of the game. Like many old people, my windy stories come from battle-earned scars.
+
+I'm not one to give career advice, but home automation seems like a good call. I see it done badly so often that someone and your introspection should be able to help get it done well. That's another market where "cheap" and "inexpensive" aren't synonyms. Homes are paralyzed because their IoT Thingy company folded and shut down their servers, disabling every light bulb in a home. That's not cool.
+
+I'll also be fair that while I called out the likes of Adafruit, article I don't always put my money where my mouth is. The perspective is that if I buy five boards today and a year from now need five more boards and they're slightly different, I (usually) have the software and hardware chops to deal with that. If I had spent a week getting the first batch running and I then spent another week adapting to the second batch because a few pins were swapped and the code was slightly incompatible, saving $4/board doesn't seem like such a bargain. But I invested 40+ years of experience to save that $4/board. :-)
+
+Regarding eTFT_SPI, it's an example of a case I've followed with interest for some time. I've been in open source since before it was called open source. Long running, popular projects that have a single developer face a burnout problem. With a bus factor of one, when that developer flames out, the project is stuck. A project like this that faces both a large base of amateur/hobbyist users and that has a large hardware component (think about the matrix of essentially every microcontroller times essentially every display. Now add in touch screens and sd cards and it's already a bad dream, but stir in eternally evolving ecosystems, and it's a nightmare. Yet there are probably thousands of projects and pages in books that refer to this project essentially run by one guy, working for free, that seems to be over it. Now what? That's a problem our industry hasn't solved well. Sometimes, popular projects can get new maintainers and successfully create a replacement fork, such as theEspAsyncWebServer family of code. Now it's just a fresh team. I'm not sure that things need corporate backing - companies go out of business as often as they're bought - but they need multiple developers, IMO.
+
+I'm glad you took some lessons between the (many, by reddit standards) lines and learned something.
+
+Good luck on your future journeys!
+2
+Avatar von u/Ok-Motor18523
+Ok-Motor18523
+•
+vor 9 Monaten
+
+Bodmer TFT is narfed with the S3.
+
+If using Arduino IDE you need to downgrade the board version to 2.0.14
+
+There’s a similar work around for platformio.
+
+Review the thread here where I got it working for a user that was having similar issues (pretty sure the board I used was a tenstar as well)
+
+https://www.reddit.com/r/esp32/s/55Gz61HadN
+
+On the other hand you may just have a dud.
+3
+Avatar von u/AndroidCrypto
+AndroidCrypto
+•
+vor 5 Monaten
+
+You don't need to downgrade board version. I'm using TFT_eSPI currently on boards 3.2.0 with ESP32, ESP32-S3, ESP32-C3, ESP32-C6 and ESP32-H2 without any problems on different displays (ST7735, ST7789, ILI9341 and others including resistive touch. See my tutorials on medium.com https://medium.com/@androidcrypto
+0
+Avatar von u/PsychologicalStep326
+PsychologicalStep326
+Poster*in •
+vor 9 Monaten
+
+Thank you. This was very helpful!
+1
+Avatar von u/Ok-Motor18523
+Ok-Motor18523
+•
+vor 9 Monaten
+
+Got it working?
+1
+Avatar von u/PsychologicalStep326
+PsychologicalStep326
+Poster*in •
+vor 9 Monaten
+
+I was able to get it by rolling back the drivers for the IDE and ESP package. I tried to post a longer write up but it keeps getting rejected. I will try to give a more detailed report soon. Thanks everyone for your assistance.
+2
+Avatar von u/Extreme_Turnover_838
+Extreme_Turnover_838
+•
+vor 9 Monaten
+
+You just need to ask the right person for help (me). I assume (with high probability) that the hardware works as promised, but perhaps the documentation is wrong/missing. I just ordered this device and will add it as a "named display" to my bb_spi_lcd library as soon as it arrives. I don't really need more of these ESP32+LCD boards, but the price was low enough that it is within my budget for such things. If you appreciate my work, it would be kind of you to support me financially so that I can continue to add support for the ever-growing list of these boards coming out of China. You can already use the display and sensors with my existing libraries if you configure them correctly, but my aim is to take the frustration out of this field by providing fully working examples that are pre-configured for as many of these products as possible.
+1
+Avatar von u/Extreme_Turnover_838
+Extreme_Turnover_838
+•
+vor 9 Monaten
+
+I received it today and added it to bb_spi_lcd as a display: "DISPLAY_TENSTAR_S3_114". Now you can easily use it with my other libraries such as AnimatedGIF (shown in the video running a small GIF unthrottled).
+
+https://youtu.be/-Aqfq_J4OTg
+3
+Avatar von u/Wrong-Cartoonist-400
+Wrong-Cartoonist-400
+•
+vor 4 Monaten
+
+Helo
+
+This is what worked for me :-) for TENSTAR ESP32-S3 1.44 TFT with QMI8658 and BMP280.
+
+#include <Wire.h>
+#include <SPI.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_ST7789.h>
+#include <Adafruit_BMP280.h>
+#include <QMI8658.h>
+
+
+// ==== PINOUT ==== //
+#define TFT_MISO 37
+#define TFT_MOSI 35
+#define TFT_SCLK 36
+#define TFT_CS   7
+#define TFT_DC   39
+#define TFT_RST  40
+#define TFT_BL   45
+
+
+#define I2C_SDA  42
+#define I2C_SCL  41
+
+
+
+// ==== TFT INIT ==== //
+#define TFT_WIDTH  135
+#define TFT_HEIGHT 240
+Adafruit_ST7789 tft = Adafruit_ST7789(TFT_CS, TFT_DC, TFT_RST);
+
+
+// ==== SENSORS ==== //
+Adafruit_BMP280 bmp;
+QMI8658 imu;
+
+1
+Avatar von u/Acrobatic_Art6552
+Acrobatic_Art6552
+•
+vor 4 Monaten
+
+can i ask what is the problem with that kind of esp32-s3 variant, i mean is there a down side if the board is a clone?
+1
+Avatar von u/Ok_Confidence_8554
+Ok_Confidence_8554
+•
+vor 2 Monaten
+
+在setup里要在最前面加上
+
+  pinMode(TFT_BL, OUTPUT);
+  digitalWrite(TFT_BL, HIGH);
+
+来打开背光，不知道为什么#define TFT_BACKLIGHT_ON HIGH 没有效果：（
+要在User_setup里面设完驱动，针脚定义后打开这行
+
+#define USE_HSPI_PORT // !important
+
+1
