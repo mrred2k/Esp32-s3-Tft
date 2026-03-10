@@ -34,7 +34,7 @@ NeoPixel: DATA=33  PWR_EN=21
                GND    ─┤  │ TFT │  ├─  BAT
   A0  free  GPIO18    ─┤  │     │  ├─  EN
   A1  free  GPIO17    ─┤  └─────┘  ├─  USB (VBUS 5V)
-  A2  free  GPIO16    ─┤           ├─   13  GPIO13  LED_BUILTIN (no LED on clone)
+  A2  free  GPIO16    ─┤           ├─   13  GPIO13  LED_BUILTIN (dim — high series R)
   A3  free  GPIO15    ─┤           ├─   12  GPIO12  free
   A4  free  GPIO14    ─┤           ├─   11  GPIO11  free
   A5  free   GPIO8    ─┤           ├─   10  GPIO10  free
