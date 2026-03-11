@@ -1,6 +1,8 @@
 # TENSTAR TS-ESP32-S3 TFT Firmware
 
-Live sensor dashboard for the TENSTAR TS-ESP32-S3 board — pressure history graph, IMU graphs, BLE advertising, motion-aware auto-dim backlight, and NeoPixel rainbow.
+Live sensor dashboard for the **TENSTAR TS-ESP32-S3** board — pressure history graph, IMU graphs, BLE advertising, motion-aware auto-dim backlight, and NeoPixel rainbow.
+
+> **Full product name:** *TS-ESP32-S3 Development Board With 1.14 Inch TFT Display With BMP280 and QMI8658C Sensor Learn to Program ESP32 S3 For Arduino*
 
 ---
 
@@ -9,11 +11,12 @@ Live sensor dashboard for the TENSTAR TS-ESP32-S3 board — pressure history gra
 | Item | Details |
 |---|---|
 | Board | TENSTAR TS-ESP32-S3 (Adafruit Feather ESP32-S3 TFT clone) |
-| SoC | ESP32-S3FH4R2 — 240 MHz, 4 MB Flash, **0 KB PSRAM** (none fitted on this PCB revision; SoC part number implies PSRAM but it is absent — confirmed at runtime) |
+| Manufacturer | TENSTAR |
+| SoC | ESP32-S3FH4R2 — 240 MHz, 4 MB Flash, **2 MB OPI PSRAM** (bonded in-package; `qio_opi` required to enable) |
 | Display | ST7789 1.14" 135×240 SPI, rotation 3 (landscape) |
 | IMU | QMI8658 6-axis (accel + gyro) at I2C 0x6B |
 | Barometer | BMP280 at I2C 0x77 |
-| NeoPixel | 1× WS2812 on GPIO 33, power enable GPIO 21 (internal load switch — not a header pin) |
+| NeoPixel | 1× WS2812 on GPIO 33, permanent 3.3 V power (no software power switch — GPIO 34 is unconnected on this clone) |
 | BOOT btn | GPIO 0, active LOW |
 
 ## Pin Map
@@ -21,7 +24,8 @@ Live sensor dashboard for the TENSTAR TS-ESP32-S3 board — pressure history gra
 ```
 Display : MOSI=35  SCLK=36  CS=7  DC=39  RST=40  BL=45
 I2C     : SDA=42   SCL=41
-NeoPixel: DATA=33  PWR_EN=21
+NeoPixel: DATA=33  (no power switch)
+Internal: GPIO21=TFT_RST (active LOW)  GPIO34=unconnected
 ```
 
 ### Board layout (USB connector at top, viewed from display side)

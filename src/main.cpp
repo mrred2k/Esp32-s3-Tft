@@ -20,7 +20,7 @@
 // ════════════════════════════════════════════════════════════════════════════
 //
 // Board     : TENSTAR TS-ESP32-S3  (Adafruit Feather ESP32-S3 TFT clone)
-// Chip      : ESP32-S3FH4R2  –  240 MHz, 4 MB Flash, 2 MB PSRAM
+// Chip      : ESP32-S3FH4R2  –  240 MHz, 4 MB Flash, 2 MB OPI PSRAM (bonded in-package)
 // Display   : ST7789 1.14"  135×240  SPI  (rotation 3 = landscape, USB right)
 //   MOSI=35  SCLK=36  CS=7  DC=39  RST=40  BL=45 (LEDC PWM)
 //
