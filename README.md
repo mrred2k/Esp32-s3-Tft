@@ -194,3 +194,12 @@ Run via **Terminal → Run Task** or `Ctrl+Shift+P → Tasks: Run Task`.
 | **Upload via USB + Monitor (no BLE)** | `tenstar_esp32s3_tft_usb_fast` | COM4 → COM3 | Upload then opens serial monitor automatically. |
 | **Upload via OTA (no BLE)** | `tenstar_esp32s3_tft_ota_fast` | WiFi 192.168.178.89 | No USB needed. Board must be running and on the network. |
 | **Monitor (COM3)** | `tenstar_esp32s3_tft` | COM3 115200 | Serial monitor with `esp32_exception_decoder` filter. USB cable required. |
+---
+
+## Firmware backup (vendor)
+
+`firmware_backup/` enthält einen Dump der **Original-Firmware des Boards**: `firmware_full_*.bin` (4 MB ab 0x0, inkl. Bootloader, Partitionstabelle und NVS) und `firmware_app_*.bin` (nur App-Partition), dazu `restore_commands.txt` zum Zurückschreiben via `esptool`.
+
+Der Dump ist **fremder Binärcode** (Rechte beim Hersteller TENSTAR; gebaut auf Arduino-ESP32-Core und ESP-IDF v4.4.5) und liegt hier ausschließlich zur **Wiederherstellung** des Auslieferungszustands — keine Lizenz zur Weitergabe an Dritte. Das NVS kann Zugangsdaten und die Board-Kalibrierung enthalten.
+
+Analyse-Werkzeuge (`analyze_firmware_backup.ps1`, `extract_firmware.ps1`) und die Anleitung sind eigene Arbeit.
